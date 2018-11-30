@@ -1,0 +1,20 @@
+﻿@model QLHOLIDAYPARTY.Models.Party
+@{
+    ViewBag.Title = "Done";
+}
+<h2>Done!</h2>
+<h3>Name: @Model.firstName @Model.LastName</h3>
+@if (Model.date1 == true)
+{
+    <h3>Date: December 15</h3>
+}else
+{
+    <h3>Date: December 16</h3>
+}
+<h3>Email: @Model.email</h3>
+
+@if(!string.IsNullOrEmpty(Model.plusOne))
+{
+<h3>Guest Name: @Model.plusOne</h3>
+}
+
