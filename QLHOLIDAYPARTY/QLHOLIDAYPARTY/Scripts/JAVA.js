@@ -27,7 +27,6 @@ function dateCheck() {
 }
 
 function validate() {
-    var flag = true;
     //first name
     if (document.getElementById("firstName").value == "") {
         document.getElementById("firstName").focus();
@@ -51,24 +50,26 @@ function validate() {
 }
 
 function validate1() {
-    var flag = true;
     //first name
     if (document.getElementById("Name").value == "") {
         document.getElementById("Name").focus();
         alert("first name sucks");
-        flag = false;
+        return false;
     }
-    //last name
-    if (document.getElementById("Phone").value == "" && Document.getElementById("Phone").length == 10) {
+    if (document.getElementById("Phone").value.length != 10) {
+        alert("Phone sucks");
+        return false;
+    }
+    if (document.getElementById("Phone").value == "") {
         document.getElementById("Phone").focus();
         alert("Phone sucks");
-        flag = false;
+        return false;
     }
     //email
     if (document.getElementById("Dish").value == "") {
         document.theForm.email.focus();
         alert("need a dish yo...");
-        flag = false;
-        return (flag);
+        return false;
     }
+    return (true);
 }
